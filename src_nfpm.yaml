@@ -1,0 +1,15 @@
+name: "ob_pam_jwt"
+arch: "amd64"
+platform: "linux"
+version: "${VERSION}"
+description: |
+  ob_pam_jwt authenticates users with an OpenID Connect (OIDC) token.
+vendor: "Outerbounds"
+homepage: "https://outerbounds.com"
+license: "BSD-3-Clause"
+contents:
+  - src: ob_pam_jwt.so
+    dst: /usr/lib64/security/${VERSIONED_OIDC_LIB}
+  - src: /usr/lib64/security/${VERSIONED_OIDC_LIB}
+    dst: /usr/lib64/security/ob_pam_jwt.so
+    type: symlink
